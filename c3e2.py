@@ -15,16 +15,18 @@ English :	This excercises are not named after the excercices of the book but ins
 #Ejemplo del codigo de funciones en el capitulo 3. Pagina 22
 
 
-def printLyrics():
-	print "En una fuente, habia un chorrito"
-	print "se hacia grandote, se hacia chiquito"
+def printLyrics():											#Como en el ejercicio anterior declaramos una funcion
+	print "En una fuente, habia un chorrito"				#escribimos el codigo que se ejecutara
+	print "se hacia grandote, se hacia chiquito"			#al llamar la funcion
 
-def repeatLyrics():
+def repeatLyrics():						#Declaramos otra funcion
+	printLyrics()						#llamamos la funcion anterior
 	printLyrics()
-	printLyrics()
 
-repeatLyrics()
-
+repeatLyrics()			#Como en esta funcion al declarla su codigo llama dos veces a la funcion
+						#Printlyrics entonces esa funcion se repetira dos veces, pero en realidad solo llamamos
+						#una vez a repeat Lyrics
+						
 
 """
 Español: Para ejecutar solo ir a la carpeta (desde la terminal) y ejecutar el comando "python nombre.py" por nombre me refiero al nombre del ejercicio
