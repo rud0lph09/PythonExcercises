@@ -3,33 +3,46 @@
 											Every excercise developed in this repo is based on the book "think python" by Allen Downey.
 
 Español : 	Los ejercicios en este repo, no estaran numerados en base al libro, si no conforme los temas que se vean en cada capítulo
-			c# indica el capitulo, e# indica el numero de ejercicio segun MI CUENTA a menos que .
-			Este ejercicio es el que se puede encontrar al final en la pag 9 del primer capítulo
+			c# indica el capitulo, e# indica el numero de ejercicio segun MI CUENTA .
 
 English :	This excercises are not named after the excercices of the book but instead are named after the chapters C# marks the chapter
 			while e# marks the number of the excercise wich is based entirely on MY OWN COUNT.
 			This are scripts to be excecuted by the python translator.
 			Definitions and comentaries will be in Spanish. Some terms will be on English. Take this into account if you wish to use my excercises as guides
 			The reason to this is because this repo is ment to help students from my College
+
+
+			+ - - - - + - - - - +
+			|		  |			|
+			|		  |			| 				Este es el ejemplo
+			|		  |			|				del cuadrado que se
+			|		  |			|				plantea en la 
+			+ - - - - + - - - - +				propuesta a realizar
+			|		  |			|
+			|		  |			|
+			|		  |			|
+			|		  |			|
+			+ - - - - + - - - - +
+
+
 """
 
 
-#Propuesta: Si me voy a las 6:52 am a correr y llevo un ritmo relajado durante la primera milla (8:52mins por Milla) y luego corro 3 a un ritmo de (7:12min por Milla)
-#			y por ultimo corro 1 milla mas al ritmo relajado. ¿Cuanto tiempo tardare?
+#Propuesta: Dibuja un cuadrado usando la funcion print
 
+vigas = "|         |         |" 	  	#Solo creamos dos variables string
+pisos = "+ - - - - + - - - - +"			#en las que ponemos parte de la figura
 
-millas = 5.0
-milRelax = 2.0
-milForte = 3.0
-ritRelax = 8.0 + (52.0/60.0)
-ritForte = 7.0 + (12.0/60.0)
+def realiza4veces(stringT):				#en esta funcion al declarla especificamos que
+	print stringT; print stringT 		#le pasaremos un argumento para repetirlo 
+	print stringT; print stringT		#cuatro veces en forma de impresion
 
-timRelax = milRelax * ritRelax
-timForte = milForte * ritForte
+def cuadrado():									#Llamamos a print para imprimr los "pisos del cuadrado"
+	print pisos; realiza4veces(vigas)			#y luego insertamos el cuerpo con realiza4veces
+	print pisos; realiza4veces(vigas)
+	print pisos
 
-timTotal = timForte + timRelax
-
-print "regresaras a casa en: " timTotal "minutos"
+cuadrado()			#ejecutamos la funcion cuadrado y listo
 
 
 """
