@@ -29,21 +29,24 @@ Installing Swampy: 	Please go to: http://thinkpython.om/swampy for instructions 
 
 """
 
-#Propuesta: Crear una tortuga en swampy y luego enviarla como argumento a una funcion que cree un cuadrado
+#Propuesta: con la misma plantilla anterior de ejemplo, haz que monzi dibuje un triangulo equilatero
+
 
 from swampy.TurtleWorld import *			#Importamos el modulo TurtleWorld de swampy
 
 miMundo = TurtleWorld()						#creamos un objeto llamado miMundo de tipo TurtleWorld
 monzi = Turtle()							#creamos una tortuga con nombre monzi
-distancia = 194								#le asignamos el largo que quermos del recorrido para monzi
+distancia = 80								#le asignamos el largo que quermos del recorrido para monzi a la variable distancia
+angulo = 120								#Recuerda que la tortuga necesita los angulos externos en caso del triangulo, estos son 120
 print monzi									#la ponemos en pantalla
 
-def dibujaSqr(tortuga, largo):				#definimos la funcion para dibujar un cuadrado
-	for i in range(4):						#ciclo for para repetir un loop 4 veces
-		bk(tortuga, largo); rt(tortuga)		#usamos funcion atras y derecha para ir moviendo a la tortuga
+def dibujaTrngl(tortuga, largo, alfa):				#definimos la funcion para dibujar un cuadrado
+	for i in range(3):								#ciclo for para repetir un loop 4 veces
+		fd(tortuga, largo); lt(tortuga, alfa)		#usamos funcion adelante e izquierda para ir moviendo a la tortuga
+													#recordemos que lt tambien puede usar otro parametro el cual es el angulo
 
-dibujaSqr(monzi, distancia)					#llamamos la funcion para poder dibujar el cuadrado
-											#le enviamos monzi y distancia como argumentos
+dibujaTrngl(monzi, distancia, angulo)		#llamamos la funcion para poder dibujar el cuadrado
+											#le enviamos monzi, angulo y distancia como argumentos
 
 print 										#simples print para dejar espacio e imprimir una instruccion al usuario
 print

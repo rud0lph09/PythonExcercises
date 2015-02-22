@@ -29,21 +29,41 @@ Installing Swampy: 	Please go to: http://thinkpython.om/swampy for instructions 
 
 """
 
-#Propuesta: Crear una tortuga en swampy y luego enviarla como argumento a una funcion que cree un cuadrado
+#Propuesta: con la misma plantilla anterior de ejemplo, haz que monzi pueda dibujar un poligono de n lados
+
+#Tip: La formula para la suma de todos angulos internos en un poligono de n lados es: (lados -2) * 180
+
 
 from swampy.TurtleWorld import *			#Importamos el modulo TurtleWorld de swampy
 
 miMundo = TurtleWorld()						#creamos un objeto llamado miMundo de tipo TurtleWorld
 monzi = Turtle()							#creamos una tortuga con nombre monzi
-distancia = 194								#le asignamos el largo que quermos del recorrido para monzi
+lados = 4									#Numero de lados
+perimetroTot = 500 							#Esta variable es el valor del perimetro total, esto nos ayuda a no salirnos de la pantalla (es un aprox ya que no estamos usando punto flotante)
+
+def distance(perimetro, nLados):			#Esta funcion recibe dos argumentos, el perimetor y el numero de lados
+	largo = perimetro/nLados				#Con esto calcularemos el largo de cada lado para evitar que sea demaciada grande la figura
+	return largo							#regresamos el valor de Largo
+
+def angulos(nLados):							#En esta funcion calcularemos la magnitud del angulo a girar con monzi
+	angInterno = ((nLados - 2) * 180)/nLados	#esta es la formula para calcular los angulos de un plogono de n lados
+	angGiro = 180 - angInterno					#con esta formula obtenemos el angulo con el que giraremos a monzi 
+	return angGiro								#esto nos da el valor de retorno del angulo de giro
+
 print monzi									#la ponemos en pantalla
 
-def dibujaSqr(tortuga, largo):				#definimos la funcion para dibujar un cuadrado
-	for i in range(4):						#ciclo for para repetir un loop 4 veces
-		bk(tortuga, largo); rt(tortuga)		#usamos funcion atras y derecha para ir moviendo a la tortuga
+def dibujaTrngl(tortuga, largo, alfa, sides):		#definimos la funcion para dibujar un cuadrado
+	for i in range(sides):							#ciclo for para repetir un loop las veces que el poligono tenga lados
+		fd(tortuga, largo); lt(tortuga, alfa)		#usamos funcion adelante e izquierda para ir moviendo a la tortuga
+													#recordemos que lt tambien puede usar otro parametro el cual es el angulo
 
-dibujaSqr(monzi, distancia)					#llamamos la funcion para poder dibujar el cuadrado
-											#le enviamos monzi y distancia como argumentos
+dibujaTrngl(monzi, distance(perimetroTot, lados), angulos(lados), lados)	#llamamos la funcion para poder dibujar el cuadrado
+																			#le enviamos monzi, lados, angulo y distancia como argumentos
+																			#como podemos ver para los angulos le enviamos el valor de 
+																			#retorno de la funcion angulos
+																			#tambien notar que distance ahora es una funcion que nos regresa
+																			#otro valor de retorno
+																			#ambos con lados como argumento
 
 print 										#simples print para dejar espacio e imprimir una instruccion al usuario
 print
