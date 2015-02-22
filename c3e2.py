@@ -12,6 +12,18 @@ English :	This excercises are not named after the excercices of the book but ins
 			The reason to this is because this repo is ment to help students from my College
 """
 
+#Ejemplo del codigo de funciones en el capitulo 3. Pagina 22
+
+
+def printLyrics():
+	print "En una fuente, habia un chorrito"
+	print "se hacia grandote, se hacia chiquito"
+
+def repeatLyrics():
+	printLyrics()
+	printLyrics()
+
+repeatLyrics()
 
 
 """
