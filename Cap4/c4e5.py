@@ -82,6 +82,8 @@ print 										#simples print para dejar espacio e imprimir una instruccion al 
 print
 print "El proceso ha terminado, puedes cerrar la ventana de TurtleWorld cuando desees para terminar el programa."
 print
+print "Tu radio fue", radio(float(lados), float(largo))		#menaje para que el usuario sepa el radio de su circulo
+print
 
 wait_for_user()								#esperamos a que el usuario cierre la ventana
 
